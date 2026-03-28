@@ -38,6 +38,8 @@ A modern **Product Information Management (PIM)** system integrated with **WooCo
 
 ---
 
+👉 Demo Video: https:https://drive.google.com/file/d/11wdhjCC70f5l6S34Z-zGInjRt-vGdymb/view?usp=sharing
+
 ## 🏗 Architecture
 
 ```
@@ -143,4 +145,4 @@ Tests cover:
 
 ## 📄 License
 
-MIT
+
