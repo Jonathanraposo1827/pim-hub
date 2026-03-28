@@ -2,43 +2,94 @@
 
 A modern **Product Information Management (PIM)** system integrated with **WooCommerce** (simulated), featuring **AI-powered product insights** via Google Gemini.
 
+> ⚠️ Includes real-world challenges like API limitations, AI integration, and full-stack system design.
+
 > Built for hackathon: WooCommerce integration is simulated with mock data, but the system is designed to be easily extendable to real APIs.
+
+---
+
+## 🎥 Demo Video
+
+👉 Watch the full project demo here:
+https://drive.google.com/file/d/11wdhjCC70f5l6S34Z-zGInjRt-vGdymb/view?usp=sharing
 
 ---
 
 ## ✨ Features
 
 ### 📊 PIM Dashboard
-- Real-time product KPIs (total, published, synced, inventory value)
-- Attribute completeness tracking
-- Category distribution charts
-- Recent activity feed
+
+* Real-time product KPIs (total, published, synced, inventory value)
+* Attribute completeness tracking
+* Category distribution charts
+* Recent activity feed
 
 ### 📦 Product Catalog
-- Full CRUD with rich attributes (color, size, material, brand, etc.)
-- CSV/JSON import & export
-- Search, filter by category & status
-- Attribute completeness indicators
-- Product status management (draft → published → archived)
+
+* Full CRUD with rich attributes (color, size, material, brand, etc.)
+* CSV/JSON import & export
+* Search, filter by category & status
+* Attribute completeness indicators
+* Product status management (draft → published → archived)
 
 ### 🤖 AI Insights (3 Layers)
+
 1. **Insight Generation** — Gemini analyzes the full product catalog to identify top/low performers, optimization opportunities
 2. **Attribute Intelligence** — Automatically detects missing, incomplete, or inconsistent product attributes
 3. **Agent Workflow** — Multi-step reasoning flow with real-time step visualization:
-   - Step 1: Fetch product data
-   - Step 2: Analyze attributes
-   - Step 3: Generate AI insights (via Gemini)
-   - Step 4: Structure results
+
+   * Step 1: Fetch product data
+   * Step 2: Analyze attributes
+   * Step 3: Generate AI insights (via Gemini)
+   * Step 4: Structure results
 
 ### 🔗 WooCommerce Sync (Mock)
-- **Push to WooCommerce** — Sync PIM products to store
-- **Pull from WooCommerce** — Import new store products to PIM
-- Sync status tracking & conflict detection
-- Sync activity log
+
+* **Push to WooCommerce** — Sync PIM products to store
+* **Pull from WooCommerce** — Import new store products to PIM
+* Sync status tracking & conflict detection
+* Sync activity log
 
 ---
 
-👉 Demo Video: https:https://drive.google.com/file/d/11wdhjCC70f5l6S34Z-zGInjRt-vGdymb/view?usp=sharing
+## ⚠️ Challenges Faced
+
+During development of PIM Hub, several real-world challenges were encountered:
+
+### 🔗 WooCommerce API Limitations
+
+* Direct WooCommerce API integration was not available during the hackathon
+* Implemented a **mock WooCommerce service** to simulate real-world behavior
+* Designed system to be easily extendable for future real API integration
+
+### 🌐 Frontend ↔ Backend Integration
+
+* Faced issues connecting React frontend with FastAPI backend
+* Solved **CORS errors**, API routing mismatches, and async request handling
+* Stabilized communication using Axios and structured endpoints
+
+### 🗄 Backend ↔ Database Connectivity
+
+* Initial challenges in database setup and schema consistency
+* Ensured reliable CRUD operations and proper data flow
+* Handled edge cases like empty datasets and sync conflicts
+
+### 🤖 AI Integration (Gemini)
+
+* Managing and structuring AI responses into meaningful insights was complex
+* Built a **mock AI fallback system** to ensure functionality without API
+* Implemented a multi-step agent workflow for better transparency
+
+---
+
+## 💡 Learnings
+
+* Built scalable and modular full-stack architecture
+* Learned to handle real-world API limitations with fallback strategies
+* Improved debugging in frontend-backend integration
+* Gained hands-on experience with AI-powered workflows and reasoning systems
+
+---
 
 ## 🏗 Architecture
 
@@ -61,14 +112,18 @@ Backend (FastAPI)
      Gemini 2.5 Flash (LLM)
 ```
 
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js v14+
-- Python 3.9+ (for AI backend)
-- Gemini API key ([get one here](https://makersuite.google.com/app/apikey))
+
+* Node.js v14+
+* Python 3.9+ (for AI backend)
+* Gemini API key ([get one here](https://makersuite.google.com/app/apikey))
 
 ### Frontend
+
 ```bash
 npm install
 npm start
@@ -76,6 +131,7 @@ npm start
 ```
 
 ### Backend (for live AI)
+
 ```bash
 cd backend
 pip install -r requirements.txt
@@ -119,6 +175,8 @@ backend/
 └── requirements.txt
 ```
 
+---
+
 ## 🧪 Testing
 
 ```bash
@@ -126,10 +184,13 @@ npm test -- --watchAll=false
 ```
 
 Tests cover:
-- Product data structure validation
-- WooCommerce mock data integrity
-- AI data quality detection (missing descriptions, attributes, pricing)
-- Edge cases (empty datasets, synced state consistency)
+
+* Product data structure validation
+* WooCommerce mock data integrity
+* AI data quality detection (missing descriptions, attributes, pricing)
+* Edge cases (empty datasets, synced state consistency)
+
+---
 
 ## 📋 Data Model
 
@@ -143,6 +204,8 @@ Tests cover:
 }
 ```
 
+---
+
 ## 📄 License
 
-
+MIT License
